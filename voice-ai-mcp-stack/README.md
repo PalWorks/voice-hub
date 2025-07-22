@@ -1,8 +1,21 @@
-# Voice AI MCP Stack
+# Voice AI MCP Stack (Starter)
 
-This repository contains a simple example stack with a Caddy web server and a glue webhook service.
+This project sets up a microservices stack for a voice-first AI assistant using Docker Compose.  
+**Initial version**: Caddy reverse proxy + FastAPI hello world webhook.
 
-## Usage
+---
 
-1. Copy `.env.example` to `.env` and adjust values as needed.
-2. Run `docker-compose up` to start the stack.
+## Quickstart
+
+### 1. Prerequisites
+
+- Docker & Docker Compose installed
+- (Production) Domain with Cloudflare DNS (see instructions below)
+
+### 2. Clone & Run
+
+```bash
+git clone https://github.com/YOURNAME/voice-ai-mcp-stack.git
+cd voice-ai-mcp-stack
+cp .env.example .env   # (Add env vars as needed)
+docker compose up --build -d
