@@ -1,12 +1,25 @@
-version: '3'
+version: '3.9'
 services:
   caddy:
-    image: caddy:latest
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - glue-webhook
+
   glue-webhook:
     build: ./glue-webhook
-    ports:
-      - "8080:8080"
+    container_name: glue-webhook
+    restart: unless-stopped
+    expose:
+      - "8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    # If you want live code changes in dev, uncomment:
+    # volumes:
+    #   - ./glue-webhook:/app
