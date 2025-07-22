@@ -1,0 +1,12 @@
+version: '3'
+services:
+  caddy:
+    image: caddy:latest
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - "80:80"
+  glue-webhook:
+    build: ./glue-webhook
+    ports:
+      - "8080:8080"
