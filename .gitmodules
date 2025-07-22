@@ -1,6 +1,0 @@
-[submodule "external/OpenHands"]
-	path = external/OpenHands
-	url = https://github.com/All-Hands-AI/OpenHands.git
-[submodule "external/Gmail-MCP-Server"]
-	path = external/Gmail-MCP-Server
-	url = https://github.com/GongRzhe/Gmail-MCP-Server
