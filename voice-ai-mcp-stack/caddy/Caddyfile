@@ -1,3 +1,4 @@
-:80 {
-    respond "Hello, world!"
+:80, :443 {
+    reverse_proxy /api/* glue-webhook:8000
+    respond "Welcome to Voice AI MCP Stack!" 200
 }
