@@ -1,4 +1,4 @@
 voicehub.palaniappan.org {
-    reverse_proxy /api/* glue-webhook:8000
+    reverse_proxy /api/* glue-webhook:9000
     respond "Welcome to Voice AI MCP Stack!" 200
 }
