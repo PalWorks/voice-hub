@@ -1,17 +1,5 @@
 version: '3.9'
 services:
-  caddy:
-    image: caddy:2
-    container_name: caddy
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-    depends_on:
-      - glue-webhook
-
   glue-webhook:
     build: ./glue-webhook
     container_name: glue-webhook
@@ -26,7 +14,3 @@ services:
 networks:
   caddy-shared:
     external: true
-
-    # If you want live code changes in dev, uncomment:
-    # volumes:
-    #   - ./glue-webhook:/app
