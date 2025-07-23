@@ -5,7 +5,7 @@ services:
     container_name: glue-webhook
     restart: unless-stopped
     expose:
-      - "8000"
+      - "9000"
     environment:
       - PYTHONUNBUFFERED=1
     networks:
