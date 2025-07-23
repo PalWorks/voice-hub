@@ -20,6 +20,12 @@ services:
       - "8000"
     environment:
       - PYTHONUNBUFFERED=1
+    networks:
+      - caddy-shared
+
+networks:
+  caddy-shared:
+    external: true
 
     # If you want live code changes in dev, uncomment:
     # volumes:
